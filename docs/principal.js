@@ -100,25 +100,25 @@ function start(event) {
 }
 //Las celulas estan rodeadas por pesos de 1, por lo tanto segun las condiciones de supervivencia, la misma se elimina, o demas dependiendo de la condicion inicial.
 function comprobarAlrededor(x, y) {
-    let result = 1;
+    let result = 0;
     if (x + 1 < 6) {
-        result =  result + result * tablero[x + 1][y];
+        result =  result + tablero[x][y] * tablero[x + 1][y];
         if (y + 1 < 6)
-            result = result + result * tablero[x + 1][y + 1];
+            result = result + tablero[x][y] * tablero[x + 1][y + 1];
         if (y - 1 >= 0)
-            result = result + result * tablero[x + 1][y - 1];
+            result = result + tablero[x][y] * tablero[x + 1][y - 1];
     }
     if (x - 1 >= 0) {
-        result = result + result * tablero[x - 1][y];
+        result = result + tablero[x][y] * tablero[x - 1][y];
         if (y + 1 < 6)
-            result = result + result * tablero[x - 1][y + 1];
+            result = result + tablero[x][y] * tablero[x - 1][y + 1];
         if (y - 1 >= 0)
-            result = result + result * tablero[x - 1][y - 1];
+            result = result + tablero[x][y] * tablero[x - 1][y - 1];
     }
     if (y + 1 < 6)
-        result = result + result * tablero[x][y + 1];
+        result = result + tablero[x][y] * tablero[x][y + 1];
     if (y - 1 >= 0)
-        result = result + result * tablero[x][y - 1];
+        result = result + tablero[x][y] * tablero[x][y - 1];
     return nivelacion(result);
 }
 
