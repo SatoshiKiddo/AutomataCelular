@@ -78,8 +78,11 @@ function colorPeso(peso, elemento){
     else if (peso < 0.5 && peso >= 0.3){
         document.getElementById(elemento).style.backgroundColor = 'green';
     }
-    else if (peso < 0.3){
+    else if (peso < 0.3 && peso >= 0.1){
         document.getElementById(elemento).style.backgroundColor = 'yellow';
+    }
+    else{
+        document.getElementById(elemento).style.backgroundColor = 'gray';
     }
     document.getElementById(elemento).innerText= peso;
 }
