@@ -45,7 +45,7 @@ function generacion() {
     for (var i = 0; i < 6; i++) {
         for (var j = 0; j < 6; j++) {
             status = comprobarAlrededor(i, j);
-            tablero2[i][j] = Math.round10(status, -1);
+            tablero2[i][j] = Math.floor10(status, -1);
             let elemento = 'x' + (i + 1) + 'y' + (j + 1);
             colorPeso(tablero2[i][j], elemento);
         }
@@ -58,7 +58,7 @@ function celdaClicked(event) {
     let set = event.target.id.split('x');
     set = set[1].split('y');
     if (tablero[parseInt(set[0], 10) - 1][parseInt(set[1], 10) - 1] == 0) {
-        let peso = Math.round10(Math.random(), -1);
+        let peso = Math.floor10(Math.random(), -1);
         tablero[parseInt(set[0], 10) - 1][parseInt(set[1], 10) - 1] = peso;
         colorPeso(peso, event.target.id);
     }
@@ -88,7 +88,7 @@ function auto(event) {
     for (var i = 0; i < 6; i++) {
         for (var j = 0; j < 6; j++) {
             let elemento = 'x' + (i + 1) + 'y' + (j + 1);
-            let peso = Math.round10(Math.random(), -1);
+            let peso = Math.floor10(Math.random(), -1);
             tablero[i][j]=peso;
             colorPeso(peso, elemento);
         }
